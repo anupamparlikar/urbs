@@ -3,3 +3,6 @@
 for example: cb.sc_1comprop('Campus', 'Gas', 'Stock', 'price', 20)
 
 -------------------------------------------------------------------------------
+2. comp.py
+
+line 135, level_0 & level_1 instead of index & pro
