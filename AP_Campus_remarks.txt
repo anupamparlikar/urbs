@@ -1,0 +1,5 @@
+1. When adding a commodity property to scenarios, add 'site', 'commodity name', etc as a string input enclosed in single quotation marks.
+
+for example: cb.sc_1comprop('Campus', 'Gas', 'Stock', 'price', 20)
+
+-------------------------------------------------------------------------------

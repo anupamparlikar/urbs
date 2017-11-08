@@ -139,16 +139,8 @@ if __name__ == '__main__':
 
     # select scenarios to be run
     scenarios = [
-                 cb.scenario_base,
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 20),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 30),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 40),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 50),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 60),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 70),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 80),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 90),
-				 cb.sc_1comprop(Campus, Gas, Stock, price, 100),
+                 cb.scenario_base
+				 
                      ]
 
     for scenario in scenarios:
