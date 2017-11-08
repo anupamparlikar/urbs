@@ -138,7 +138,7 @@ if __name__ == '__main__':
     # select scenarios to be run
     scenarios = [
                  cb.scenario_base,
-                 cb.sc_CO2limit(40000,30000,20000)#,
+                 cb.sc_CO2limit(40000),cb.sc_CO2limit(30000),cb.sc_CO2limit(20000),cb.sc_CO2limit(10000)
                  #cb.sc_1proprop('Campus', 'PVS30', 'inv-cost', 600000),
                  #cb.sc_2stoprop('Campus', 'Campus', 'Battery', 'Reservoir',
                  #'Elec', 'Heat', 'eff-in', 'discharge', 0.9, 0.9999)
