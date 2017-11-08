@@ -95,7 +95,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
     return prob
 
 if __name__ == '__main__':
-    input_file = '1Node.xlsx'
+    input_file = 'DSM_test.xlsx'
     result_name = os.path.splitext(input_file)[0]  # cut away file extension
     result_dir = prepare_result_directory(result_name)  # name + time stamp
 
@@ -105,26 +105,28 @@ if __name__ == '__main__':
     shutil.copyfile(__file__, os.path.join(result_dir, __file__))
 
     # simulation timesteps
-    (offset, length) = (3000, 168)  # time step selection
+    (offset, length) = (0, 20)  # time step selection
     timesteps = range(offset, offset+length+1)
 
     # plotting commodities/sites
     plot_tuples = [
-        ('Campus', 'Elec'),
-        ('Campus', 'Heat'),
-        ('Campus', 'Cold')
+        ('Campus', 'Elec')#,
+        #('Campus', 'Heat'),
+        #('Campus', 'Cold')
     ]
 
     # detailed reporting commodity/sites
     report_tuples = [
-        ('Campus', 'Elec'), ('Campus', 'Heat'), ('Campus', 'Cold')]
+        ('Campus', 'Elec')#, 
+		#('Campus', 'Heat'), ('Campus', 'Cold')
+		]
 
     # plotting timesteps
     plot_periods = {
-        'spr': range(1000, 1000+24*7),
-        'sum': range(3000, 3000+24*7),
-        'aut': range(5000, 5000+24*7),
-        'win': range(7000, 7000+24*7)
+        'spr': range(1,21)#,
+        #'sum': range(3000, 3000+24*7),
+        #'aut': range(5000, 5000+24*7),
+        #'win': range(7000, 7000+24*7)
     }
 
     # add or change plot colors
@@ -137,12 +139,8 @@ if __name__ == '__main__':
 
     # select scenarios to be run
     scenarios = [
-                 cb.scenario_base,
-                 cb.sc_CO2limit(40000),
-                 cb.sc_1proprop('Campus', 'PVS30', 'inv-cost', 600000),
-                 cb.sc_2stoprop('Campus', 'Campus', 'Battery', 'Reservoir',
-                 'Elec', 'Heat', 'eff-in', 'discharge', 0.9, 0.9999)
-    ]
+                 cb.scenario_base
+                     ]
 
     for scenario in scenarios:
         prob = run_scenario(input_file, timesteps, scenario, result_dir,
