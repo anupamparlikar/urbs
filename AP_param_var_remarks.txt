@@ -5,3 +5,15 @@ cb.sc_CO2limit(40000,30000,20000)
 Error: sc_CO2limit() takes 1 positional argument but 3 were given
 
 ------------------------------------------------------------------------
+2. comp.py runtime error resolved
+
+line 135 of comp.py
+
+esum.set_index(['level_0', 'level_1'], inplace=True) in place of esum.set_index(['index', 'pro'], inplace=True)
+
+-------------------------------------------------------------------------------------------------------------------
+3. Energy sums sheet in comparison.xlsx file 
+
+values are expressed in GWh
+
+-----------------------------------------------------
