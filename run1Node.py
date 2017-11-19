@@ -95,7 +95,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
     return prob
 
 if __name__ == '__main__':
-    input_file = 'Part_load.xlsx'
+    input_file = 'BS_1Node_aktuell_2016.xlsx'
     result_name = os.path.splitext(input_file)[0]  # cut away file extension
     result_dir = prepare_result_directory(result_name)  # name + time stamp
 
@@ -110,19 +110,19 @@ if __name__ == '__main__':
 
     # plotting commodities/sites
     plot_tuples = [
-        ('Campus', 'Elec'),('Campus', 'Heat')
+        ('Campus', 'Elec'),('Campus', 'Heat'),('Campus', 'Cold'),('Campus', 'Gas')
     ]
 
     # detailed reporting commodity/sites
     report_tuples = [
-        ('Campus', 'Elec'),('Campus', 'Gas'),('Campus', 'Heat')]
+        ('Campus', 'Elec'),('Campus', 'Heat'),('Campus', 'Cold'),('Campus', 'Gas')]
 
     # plotting timesteps
     plot_periods = {
-        'spr': range(1,51 ),
-        'sum': range(3000, 3000+24*7),
-        'aut': range(5000, 5000+24*7),
-        'win': range(7000, 7000+24*7)
+        'spr': range(1,51 )
+        #'sum': range(3000, 3000+24*7),
+        #'aut': range(5000, 5000+24*7),
+        #'win': range(7000, 7000+24*7)
     }
 
     # add or change plot colors
