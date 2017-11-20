@@ -71,7 +71,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
     log_filename = os.path.join(result_dir, '{}.log').format(sce)
 
     # solve model and read results
-    optim = SolverFactory('gurobi')  # cplex, glpk, gurobi, ...
+    optim = SolverFactory('glpk')  # cplex, glpk, gurobi, ...
     optim = setup_solver(optim, logfile=log_filename)
     result = optim.solve(prob, tee=True)
 
@@ -95,7 +95,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
     return prob
 
 if __name__ == '__main__':
-    input_file = 'BS_1Node_aktuell_2016.xlsx'
+    input_file = 'Part_load.xlsx'
     result_name = os.path.splitext(input_file)[0]  # cut away file extension
     result_dir = prepare_result_directory(result_name)  # name + time stamp
 
@@ -110,12 +110,12 @@ if __name__ == '__main__':
 
     # plotting commodities/sites
     plot_tuples = [
-        ('Campus', 'Elec'),('Campus', 'Heat'),('Campus', 'Cold'),('Campus', 'Gas')
+        ('Campus', 'Elec'),('Campus', 'Gas')
     ]
 
     # detailed reporting commodity/sites
     report_tuples = [
-        ('Campus', 'Elec'),('Campus', 'Heat'),('Campus', 'Cold'),('Campus', 'Gas')]
+        ('Campus', 'Elec'),('Campus', 'Gas')]
 
     # plotting timesteps
     plot_periods = {
